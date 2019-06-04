@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+
+    <title>Дифракция Фраунгофера</title>
+</head>
+<body>
+
+<header>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">ИЗУЧЕНИЕ ДИФРАКЦИИ ФРАУНГОФЕРА НА ОДНОЙ И НЕСКОЛЬКИХ ЩЕЛЯХ</h5>
+        <a class="btn btn-outline-primary" href="Теория.pdf" target="_blank">Теория</a>
+    </div>
+</header>
+<main>
+    <div class="canvasWrap">
+        <canvas id="myChart" width="1033" height="500"></canvas>
+        <canvas class="gradient" id="grad" width="992" height="50"></canvas>
+    </div>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="N" id="labelN">Количество щелей: 1</label>
+                <input type="range" min="1" max="20" class="form-control-range" value="1" id="N">
+            </div>
+            <div class="form-group">
+                <label for="lambda" id="labelLambda">длина волны: 550нм</label>
+                <input type="range" min="400" max="700" class="form-control-range" id="lambda">
+            </div>
+            <div class="form-group">
+                <label for="a" id="labelA">Ширина щели: 50мкм</label>
+                <input type="range" min="1" max="99" class="form-control-range" value="50" id="a">
+            </div>
+            <div class="form-group">
+                <label for="b" id="labelB">Расстояние между центрами щелей: 100мкм</label>
+                <input type="range" min="1" max="200" class="form-control-range" value="100" id="b">
+            </div>
+            <div class="form-group" style="display: none">
+                <label for="I" id="labelI">Интенсивность в центре: 50</label>
+                <input type="range" min="0" max="100" class="form-control-range" id="I">
+            </div>
+            <div class="form-group">
+                <label for="L" id="labelL">Расстояние от решетки до экрана: 1.5м</label>
+                <input type="range" min="10" max="50" value="15" class="form-control-range" id="L">
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="const.js"></script>
+<script src="Chart.js"></script>
+<noscript>
+    <div>
+        Извините, для работы приложения нужен включённый Javascript
+    </div>
+</noscript>
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">&copy; all rights reserved by Alina Ordina and Artemy Novikov</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
