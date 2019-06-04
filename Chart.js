@@ -43,7 +43,9 @@ function diagram () {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'cм'
+                        labelString: 'cм',
+                        fontSize: 16,
+                        fontStyle: 'normal'
                     },
                     position: 'top'
                 }],
