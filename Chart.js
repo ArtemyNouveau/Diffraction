@@ -122,14 +122,14 @@ function update() {
     myChart.data.datasets[0].data = [];
     myChart.data.datasets[1].data = [];
 
-    let Imax = Ifi(sinfi(0.0000000000000001));
+    let Imax = Ifi(1.1054525350662203e-14);
 
     ctx.fillStyle = "rgba(0, 0, 0, 1)";
     ctx.fillRect(0,0,1000,50);
     ctx.lineWidth = 1;
 
-    for (let x = -displayWidth/2; x <= displayWidth/2; x+=displayWidth/991) {
 
+    for (let x = -displayWidth/2; x <= displayWidth/2; x+=displayWidth/(2*991)) {
         if ((count < -(multiplyer-2)) || (count >= (multiplyer-2))) {
             myChart.data.labels.push('');
         } else {
@@ -139,7 +139,7 @@ function update() {
         ctx.strokeStyle = ''+wavelengthToColor(Lambda.value, Ifi(sinfi(x))/Imax);
         ctx.beginPath();
         ctx.moveTo(count+multiplyer, 0);
-        ctx.lineTo((count++)+multiplyer, 50);
+        ctx.lineTo((count+=0.5)+multiplyer, 50);
         ctx.stroke();
 
         myChart.data.datasets[0].data.push(Ifi(sinfi(x)).toFixed(14));
@@ -171,7 +171,7 @@ A.onmousemove = function () {
 
 B.onmousemove = function () {
     isPortableDevice = false;
-    document.getElementById("labelB").innerText = "Расстояние между центрами щелей: " + B.value + "мкм";
+    document.getElementById("labelB").innerText = "расстояние между краями соседних щелей: " + B.value + "мкм";
     delta = -3;
     update();
 };
