@@ -171,7 +171,7 @@ A.onmousemove = function () {
 
 B.onmousemove = function () {
     isPortableDevice = false;
-    document.getElementById("labelB").innerText = "расстояние между краями соседних щелей: " + B.value + "мкм";
+    document.getElementById("labelB").innerText = "Расстояние между краями соседних щелей: " + B.value + "мкм";
     delta = -3;
     update();
 };
@@ -211,7 +211,7 @@ A.onchange = function () {
 
 B.onchange = function () {
     if (!isPortableDevice) return;
-    document.getElementById("labelB").innerText = "Расстояние между центрами щелей: " + B.value + "мкм";
+    document.getElementById("labelB").innerText = "Расстояние между краями соседних щелей: " + B.value + "мкм";
     delta = -3;
     update();
 };
